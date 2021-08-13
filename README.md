@@ -7,19 +7,19 @@ A lightweight foundation for your next webpack based frontend project.
 ### Installation
 
 ```
-npm install
+yarn
 ```
 
 ### Start Dev Server
 
 ```
-npm start
+yarn start
 ```
 
 ### Build Prod Version
 
 ```
-npm run build
+yarn run build
 ```
 
 ### Features:
