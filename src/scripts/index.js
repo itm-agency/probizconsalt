@@ -68,7 +68,7 @@ jQuery(document).ready(function () {
      * Navigation Section
      * @click
      */
-    $(document).on('click', '.nav a', function (event) {
+    $(document).on('click', '.nav a, .scrollSection a', function (event) {
         event.preventDefault();
 
         var id  = $(this).attr('href'),
