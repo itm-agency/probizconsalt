@@ -1,0 +1,50 @@
+.logos_list {
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #d8d8d8;
+    height: 100px;
+    padding: 12px 35px;
+    margin-bottom: 24px;
+    transition: all 0.18s linear;
+    position: relative;
+
+    @include media(sm) {
+      margin-bottom: 0px;
+    }
+
+    img {
+      filter: grayscale(100%);
+      transition: all 0.18s linear;
+      position: relative;
+      z-index: 1;
+    }
+
+    &:hover {
+      border-color: $red;
+      img {
+        filter: grayscale(0%);
+      }
+    }
+
+    &.file {
+      &::after {
+        $position: 11px;
+
+        content: '';
+        display: block;
+        position: absolute;
+        width: 14px;
+        height: 12px;
+        background: url('../images/icon_atach.svg') center center no-repeat;
+        background-size: contain;
+        z-index: 3;
+        top: $position;
+        right: $position;
+      }
+    }
+  }
+
+}

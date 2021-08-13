@@ -1,0 +1,54 @@
+.logos {
+  margin-bottom: 125px;
+  @include media(md) {
+    margin-bottom: 20px;
+  }
+  @include media(sm) {
+    margin-bottom: 55px;
+  }
+
+  &.clients {
+    padding-top: 40px;
+    @include media(md) {
+      padding: 0;
+    }
+  }
+
+  &.partners {
+    margin-bottom: 55px;
+    padding-top: 55px;
+    @include media(md) {
+      margin-bottom: 35px;
+    }
+    @include media(sm) {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__header {
+    margin: 0 0 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include media(md) {
+      margin: 0 0 35px 0;
+    }
+
+    &-title {
+      margin: 0;
+    }
+  }
+
+  &__content {
+
+  }
+
+  .swiper{
+    &-wrapper{
+      @include media(sm) {
+
+      }
+    }
+  }
+
+}

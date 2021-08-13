@@ -1,0 +1,90 @@
+.cases_list {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+
+  > li {
+    display: flex;
+    width: 33.3%;
+    margin-bottom: 60px;
+    @include media(md) {
+      width: 50%;
+    }
+    @include media(sm) {
+      width: 100%;
+      margin-bottom: 45px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &-image {
+      margin: 0 0 28px 0;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        transition: all 0.18s linear;
+      }
+    }
+
+    &:hover {
+      img {
+        opacity: 0.75;
+      }
+    }
+
+    &-cat {
+      text-transform: uppercase;
+      color: #adadad;
+      font-weight: 600;
+      font-size: 11px;
+      line-height: 17px;
+      position: relative;
+      padding: 0 0 0 17px;
+      margin: 0 0 24px 0;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: -1px;
+        height: 17px;
+        width: 2px;
+        background-color: $red;
+      }
+    }
+
+    &-title {
+      span {
+        font-weight: 600;
+        color: $dark;
+        text-decoration: none;
+        outline: none !important;
+        background-image: linear-gradient(to top, transparent 0, $blue 0, $blue 1px, transparent 1px);
+        background-size: 0% 100%;
+        background-repeat: no-repeat;
+        background-position: left;
+        transition: -webkit-background-size 0.3s;
+        transition: background-size 0.3s;
+        display: inline;
+        @include media(md) {
+          font-size: 17px;
+        }
+      }
+    }
+
+    &:hover {
+      span {
+        background-size: 100% 100%;
+        color: $blue;
+      }
+    }
+  }
+
+}

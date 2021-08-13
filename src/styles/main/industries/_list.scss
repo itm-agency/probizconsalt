@@ -1,0 +1,88 @@
+.industries_list {
+  $gutter: 40px;
+  $gutter-xl: 30px;
+
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  margin-left: -#{$gutter};
+  margin-right: -#{$gutter};
+  @include media(xl) {
+    margin-left: -#{$gutter-xl};
+    margin-right: -#{$gutter-xl};
+  }
+
+  > li {
+    display: flex;
+    width: 33.3%;
+    padding: 0 $gutter;
+    margin-bottom: 50px;
+    @include media(xl) {
+      padding: 0 $gutter-xl;
+    }
+    @include media(lgs) {
+      width: 50%;
+    }
+    @include media(sm) {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__item {
+    $icon: 75px;
+
+    display: flex;
+
+    &-icon {
+      width: $icon;
+      display: flex;
+      align-items: center;
+
+      img,
+      svg {
+        height: 50px;
+      }
+    }
+
+    &-text {
+      width: calc(100% - #{$icon});
+      display: flex;
+      align-items: center;
+
+      span {
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 28px;
+        text-decoration: none;
+        outline: none !important;
+        background-image: linear-gradient(to top, transparent 0, $blue 0, $blue 1px, transparent 1px);
+        background-size: 0% 100%;
+        background-repeat: no-repeat;
+        background-position: left;
+        transition: -webkit-background-size 0.3s;
+        transition: background-size 0.3s;
+        display: inline;
+        @include media(xl) {
+          font-size: 17px;
+        }
+        @include media(lg) {
+          font-size: 17px;
+          line-height: 1.3;
+        }
+
+        i {
+          font-style: normal;
+          white-space: nowrap;
+        }
+      }
+    }
+
+    &:hover {
+      span {
+        background-size: 100% 100%;
+      }
+    }
+  }
+
+}

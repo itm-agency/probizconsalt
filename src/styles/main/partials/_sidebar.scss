@@ -1,0 +1,35 @@
+.sidebar {
+  $width: 315px;
+  $width-xl: 350px;
+  $width-lg: 300px;
+
+  display: flex;
+
+  &__left {
+    width: $width;
+    @include media(xl) {
+      width: $width-xl;
+    }
+    @include media(lg) {
+      width: $width-lg;
+    }
+    @include media(md) {
+      width: 0;
+    }
+  }
+
+  &__right {
+    width: calc(100% - #{$width});
+    padding-right: 150px;
+    @include media(xl) {
+      width: calc(100% - #{$width-xl});
+      padding-right: 0px;
+    }
+    @include media(lg) {
+      width: calc(100% - #{$width-lg});
+    }
+    @include media(md) {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,177 @@
+.text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: $dark;
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0 0 30px 0;
+  }
+
+  h2 {
+    font-size: 36px;
+    @include media(md) {
+      font-size: 28px;
+    }
+  }
+
+  h3 {
+    font-size: 32px;
+    @include media(md) {
+      font-size: 26px;
+    }
+  }
+
+  h4 {
+    font-size: 28px;
+    @include media(md) {
+      font-size: 24px;
+    }
+  }
+
+  h5 {
+    font-size: 22px;
+    @include media(md) {
+      font-size: 20px;
+    }
+  }
+
+  h5 {
+    font-size: 18px;
+  }
+
+  p {
+    margin: 0;
+    padding: 0 0 30px 0;
+    display: inline-block;
+    color: $dark;
+  }
+
+  strong {
+    font-weight: 700;
+    color: $dark;
+  }
+
+  a {
+    color: $blue;
+    text-decoration: none;
+    outline: none !important;
+    background-image: linear-gradient(to top, transparent 0, $blue 0, $blue 1px, transparent 1px);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: left;
+    transition: -webkit-background-size 0.3s;
+    transition: background-size 0.3s;
+
+    &:hover {
+      background-size: 0% 100%;
+    }
+  }
+
+  ol,
+  ul {
+    margin-bottom: 30px;
+
+    > li {
+      position: relative;
+
+      &:not(:last-child) {
+        margin: 0 0 12px 0;
+      }
+    }
+  }
+
+  ol {
+    counter-reset: liitem;
+    margin-left: 14px;
+
+    > li {
+      padding: 0 0 0 45px;
+
+      &::before {
+        counter-increment: liitem;
+        content: counter(liitem) ".";
+        position: absolute;
+        left: 0px;
+        top: -1px;
+        font-weight: 700;
+        font-size: 15px;
+        color: $blue;
+      }
+    }
+  }
+
+  ul {
+
+    > li {
+      padding: 0 0 0 60px;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 12px;
+        height: 1px;
+        background-color: $blue;
+        width: 32px;
+      }
+    }
+
+  }
+
+  blockquote {
+    font-style: italic;
+    padding: 5px 0 5px 30px;
+    border-left: 4px solid $blue;
+    margin: 0 0 30px 0;
+  }
+
+  table {
+    width: 100%;
+    text-align: left;
+    border: 1px solid #e8e8e8;
+    margin: 0 0 30px 0;
+
+    td,
+    th {
+      padding: 25px 40px;
+    }
+
+    thead {
+      > tr {
+        > th {
+          background-color: $blue;
+          color: #fff;
+          font-size: 17px;
+          font-weight: 700;
+          white-space: nowrap;
+        }
+      }
+    }
+
+    tbody {
+      > tr {
+        background-color: #f1f1f1;
+
+        &:nth-child(2n) {
+          background-color: #fff;
+        }
+      }
+    }
+
+  }
+
+  .table-responsive {
+    @include media(md) {
+      overflow: auto;
+      margin-bottom: 30px;
+    }
+  }
+
+}

@@ -1,0 +1,23 @@
+.container {
+  &-fluid {
+    padding-right: $gutter;
+    padding-left: $gutter;
+
+    @include media(xl) {
+      max-width: 1380px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .row > * {
+      padding-right: $gutter / 2;
+      padding-left: $gutter / 2;
+    }
+
+    .row {
+      margin-right: -#{$gutter / 2};
+      margin-left: -#{$gutter / 2};
+    }
+
+  }
+}

@@ -1,0 +1,206 @@
+.service_single {
+
+  &__header {
+    display: flex;
+    @include media(lgs) {
+      flex-direction: column;
+    }
+
+    &-title {
+      width: 60%;
+      @include media(lgs) {
+        width: 100%;
+        margin: 0 0 25px 0;
+      }
+    }
+
+    &-clients {
+      width: 40%;
+      padding: 15px 0 0 0;
+      @include media(lgs) {
+        width: 100%;
+      }
+
+      .title {
+        font-weight: 600;
+        font-size: 15px;
+        margin: 0 0 40px 0;
+        @include media(lgs) {
+
+        }
+      }
+
+      p {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #8e8e8e;
+      }
+
+    }
+  }
+
+  &__text {
+    margin: 0 0 60px 0;
+  }
+
+  &__image {
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: flex-end;
+
+    img {
+      margin-right: 15%;
+      @include media(lgs) {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &__services {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    @include media(md) {
+      padding-bottom: 40px;
+      padding-top: 40px;
+    }
+
+    &-right {
+      position: relative;
+      z-index: 1;
+      padding-left: 30px;
+      @include media(md) {
+        padding: 40px 0 0 0;
+      }
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: -1;
+        width: 486px;
+        height: 108px;
+        background: url('../images/services_title_cases.png') center center no-repeat;
+        top: -30px;
+        left: -120px;
+        @include media(md) {
+          display: none;
+        }
+      }
+    }
+
+    &-title {
+      font-size: 36px;
+      font-weight: 600;
+      margin: -25px 0 50px 0;
+      position: relative;
+      @include media(md) {
+        margin: 0 0 30px 0;
+      }
+      @include media(sm) {
+        font-size: 28px;
+      }
+
+      br {
+        @include media(md) {
+          display: none;
+        }
+      }
+    }
+
+    &-introtext {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .swiper {
+
+      &-slide {
+        width: 440px;
+        @include media(lgs) {
+          width: 340px;
+        }
+      }
+
+      &-controls {
+        justify-content: flex-end;
+        margin: 0 0 30px 0;
+        @include media(md) {
+          margin: 0 0 40px 0;
+        }
+      }
+
+      &-container {
+        margin-right: -180px;
+        @include media(lgs) {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  &__advantages {
+    margin: 0 0 30px 0;
+    @include media(md) {
+      padding: 30px 0 0 0;
+      margin: 0 0 0px 0;
+    }
+
+    &-title {
+      font-size: 36px;
+      font-weight: 600;
+      margin: 0 0 70px 0;
+      @include media(sm) {
+        font-size: 28px;
+        margin: 0 0 40px 0;
+      }
+
+      br {
+        @include media(md) {
+          display: none;
+        }
+      }
+    }
+
+    &-list {
+      $gutter: 30px;
+
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -#{$gutter} !important;
+
+      > li {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        padding: 0 $gutter !important;
+        margin-bottom: 95px;
+        @include media(sm) {
+          width: 100%;
+          margin-bottom: 40px;
+        }
+      }
+
+      &-icon {
+        margin: 0 0 28px 0;
+
+        svg,
+        img {
+          height: 68px;
+        }
+      }
+
+      &-title {
+        color: $blue;
+        font-weight: 600;
+        font-size: 18px;
+      }
+
+      &-text {
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+    }
+  }
+
+}

@@ -1,0 +1,52 @@
+.btn {
+  appearance: none;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 18px;
+  height: 68px;
+  padding: 0 56px;
+  border: 1px solid $blue;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.15s linear;
+  text-align: center;
+  justify-content: center;
+  background-color: $blue;
+  @include media(lg) {
+    height: 50px;
+    padding: 0 35px;
+    font-size: 15px;
+  }
+
+  &:hover {
+    background-color: $red;
+    border-color: $red;
+  }
+
+  &:active {
+    background-color: #002965;
+    border-color: #002965;
+  }
+
+  &-block {
+    display: flex;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+  }
+
+  &-opacity {
+    background-color: transparent;
+    border: 3px solid #002965;
+    color: #002965;
+    padding-left: 35px;
+    padding-right: 35px;
+
+    &:hover {
+      background-color: #002965;
+      border-color: #002965;
+      color: #fff;
+    }
+  }
+}

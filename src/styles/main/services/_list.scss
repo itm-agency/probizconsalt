@@ -1,0 +1,65 @@
+.services_list {
+  display: flex;
+  flex-wrap: wrap;
+
+  > li {
+    width: 33.32%;
+    display: flex;
+    margin-bottom: 65px;
+    @include media(lgs) {
+      width: 50%;
+    }
+    @include media(sm) {
+      width: 100%;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__item {
+    &-icon {
+      margin: 0 0 35px 0;
+
+      img {
+        height: 54px;
+      }
+    }
+
+    &-title {
+      color: $blue;
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 1.4;
+      text-decoration: none;
+      outline: none !important;
+      background-image: linear-gradient(to top,transparent 0,$red 0,$red 1px,transparent 1px);
+      background-size: 0% 100%;
+      background-repeat: no-repeat;
+      background-position: left;
+      transition: background-size .3s;
+      @include media(xl) {
+        font-size: 20px;
+      }
+      @include media(lg) {
+        font-size: 17px;
+      }
+    }
+
+    &-list {
+      color: $dark;
+      padding: 20px 0 0 0;
+      margin: 0;
+
+      > li {
+        &:not(:last-child) {
+          margin: 0 0 8px 0;
+        }
+      }
+    }
+
+    &:hover {
+      span {
+        //background-size: 100% 100%;
+      }
+    }
+  }
+}

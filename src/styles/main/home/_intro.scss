@@ -1,0 +1,233 @@
+.intro {
+  position: relative;
+  margin: 0 0 75px 0;
+  @include media(md) {
+    margin: 0 0 70px 0;
+  }
+
+  &__slider {
+    &-image {
+      object-fit: cover;
+      object-position: right bottom;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      @include media(sm) {
+        object-position: 70% bottom;
+      }
+    }
+
+    &-content {
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      right: 0;
+      top: 270px;
+      //transform: translateY(-40%);
+      @include media(md) {
+        //transform: translateY(-50%);
+        top: 150px;
+      }
+      @include media(sm) {
+        top: 0;
+        //transform: translateY(0%);
+        padding: 80px 0 0 0;
+      }
+    }
+
+    &-text {
+      position: relative;
+
+      h1 {
+        font-size: 85px;
+        margin: 0 0 30px 0;
+        @include media(lg) {
+          font-size: 65px;
+        }
+        @include media(md) {
+          font-size: 70px;
+        }
+        @include media(sm) {
+          font-size: 36px;
+        }
+        @include media(xxs) {
+          font-size: 28px;
+        }
+      }
+
+      p {
+        font-size: 27px;
+        line-height: 1.4;
+        display: block;
+        max-width: 600px;
+        @include media(lg) {
+          font-size: 22px;
+        }
+        @include media(md) {
+          max-width: 380px;
+        }
+        @include media(sm) {
+          font-size: 15px;
+          max-width: 270px;
+        }
+      }
+
+      &-footer {
+        padding: 180px 0 0 0;
+        @include media(lg) {
+          padding: 100px 0 0 0;
+        }
+        @include media(md) {
+          padding: 140px 0 0 0;
+        }
+        @include media(sm) {
+          padding: 110px 0 0 0;
+        }
+
+        a {
+          font-weight: 600;
+          color: $dark;
+          position: relative;
+          font-size: 17px;
+          line-height: 22px;
+          @include media(md) {
+            font-size: 15px;
+            line-height: 18px;
+          }
+
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            height: 11px;
+            width: 21px;
+            background: url('../images/icon_arrow_right_red.svg') center center no-repeat;
+            background-size: contain;
+            right: -30px;
+            transition: all 0.12s linear;
+            top: 6px;
+          }
+
+          &:hover {
+            &::after {
+              right: -35px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .swiper {
+    &-slide {
+      height: 100vh;
+      opacity: 0 !important;
+      @include media(sm) {
+        height: 460px;
+      }
+
+      &-active {
+        opacity: 1 !important;
+      }
+    }
+
+    &-container {
+      position: relative;
+    }
+
+    &-pagination {
+      position: absolute;
+      width: auto;
+      padding: 0;
+      margin: 0;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      right: 80px;
+      top: 50%;
+      transform: translateY(-50%);
+      bottom: auto;
+      left: auto;
+      @include media(md) {
+        right: 30px;
+      }
+
+      &-bullet {
+        $size: 18px;
+
+        width: $size;
+        height: $size;
+        background: none;
+        position: relative;
+        margin: 6px 0 !important;
+        opacity: 1;
+        z-index: 5;
+
+        &::after {
+          $size: 8px;
+
+          content: '';
+          display: block;
+          position: absolute;
+          width: $size;
+          height: $size;
+          border-radius: 50%;
+          background-color: #fff;
+          left: 50%;
+          top: 50%;
+          transform: translateY(-50%) translateX(-50%);
+        }
+
+        svg {
+          display: none;
+          width: 60px;
+          transform: rotate(-80deg);
+          position: absolute;
+          z-index: -1;
+          top: 50%;
+          left: 50%;
+          margin-top: -44px;
+          margin-left: -10px;
+
+          circle {
+            fill: none;
+            stroke-width: 4;
+            stroke: #fff;
+
+            &.default {
+              opacity: 0;
+              stroke-dasharray: 125.6;
+
+              &.inner {
+                opacity: 1;
+                stroke-dashoffset: 125.6;
+                animation: circle-default 5.4s ease;
+              }
+            }
+          }
+        }
+
+        &-active {
+          z-index: 1;
+
+          &::after {
+            opacity: 0.5;
+          }
+
+          svg {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes circle-default {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

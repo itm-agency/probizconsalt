@@ -1,0 +1,110 @@
+.experts_list {
+  &__item {
+    &-image {
+      margin: 0 0 35px 0;
+      display: block;
+
+      img {
+        transition: all 0.18s linear;
+        @include media(md) {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    &:hover {
+      img {
+        opacity: 0.75;
+      }
+    }
+
+    &-cat {
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #adadad;
+      font-size: 11px;
+      line-height: 18px;
+      margin: 0 0 15px 0;
+      //white-space: nowrap;
+      //overflow: hidden;
+      //text-overflow: ellipsis;
+    }
+
+    &-title {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 1.4;
+      color: $dark;
+      margin: 0 0 28px 0;
+      display: block;
+      @include media(xl) {
+        margin: 0 0 20px 0;
+      }
+      @include media(lg) {
+        font-size: 18px;
+      }
+      @include media(md) {
+        font-size: 24px;
+      }
+
+      span {
+        text-decoration: none;
+        outline: none !important;
+        background-image: linear-gradient(to top, transparent 0, $blue 0, $blue 1px, transparent 1px);
+        background-size: 0% 100%;
+        background-repeat: no-repeat;
+        background-position: left;
+        transition: -webkit-background-size 0.3s;
+        transition: background-size 0.3s;
+        display: inline;
+      }
+
+      &:hover {
+        span {
+          background-size: 100% 100%;
+        }
+      }
+    }
+
+    &-excerpt {
+      font-size: 15px;
+      line-height: 1.4;
+      color: #444;
+    }
+
+    &-footer {
+      padding: 40px 0 0 0;
+      @include media(xl) {
+        padding: 25px 0 0 0;
+      }
+
+      a {
+        position: relative;
+        font-size: 15px;
+        font-weight: 600;
+        color: $blue;
+
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          height: 11px;
+          width: 21px;
+          background: url('../images/icon_arrow_right_red.svg') center center no-repeat;
+          background-size: contain;
+          right: -30px;
+          transition: all 0.12s linear;
+          top: 4px;
+        }
+
+        &:hover {
+          &::after {
+            right: -35px;
+          }
+        }
+      }
+    }
+  }
+}

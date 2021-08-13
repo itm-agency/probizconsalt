@@ -1,0 +1,155 @@
+.footer {
+  flex: 0 0 auto;
+
+  &__phonelist {
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 0 0 0;
+    @include media(sm) {
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 0;
+      margin: 0 0 35px 27px;
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+    margin: 0 0 55px 0;
+    @include media(sm) {
+      margin: 0 0 25px 0;
+    }
+
+    img,
+    svg {
+      height: 40px;
+
+      @include media(sm) {
+        height: 25px;
+      }
+    }
+  }
+
+  &__copyright {
+    font-size: 14px;
+    line-height: 1.4;
+    display: block;
+    margin: 0 0 28px 0;
+    font-weight: 300;
+    @include media(sm) {
+      margin: 0 0 24px 0;
+    }
+  }
+
+  &__text {
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 1.4;
+    max-width: 370px;
+  }
+
+  &__contacts {
+    display: flex;
+    justify-content: space-between;
+
+    &-email,
+    &-phone {
+      font-weight: 600;
+      color: $dark;
+      position: relative;
+      white-space: nowrap;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        left: -35px;
+        top: 50%;
+        transform: translateY(-50%);
+        @include media(md) {
+          left: -25px;
+        }
+      }
+    }
+
+    &-email {
+      &::before {
+        width: 14px;
+        height: 11px;
+        background-image: url('../images/icon_email.svg');
+      }
+    }
+
+    &-phone {
+      &::before {
+        width: 15px;
+        height: 15px;
+        background-image: url('../images/icon_tel.svg');
+      }
+    }
+
+    &-address {
+      @include media(sm) {
+        margin: 0 0 44px 0;
+      }
+
+      > li {
+        font-size: 14px;
+        line-height: 1.4;
+
+        &:not(:last-child) {
+          margin: 0 0 38px 0;
+        }
+
+        span {
+          font-weight: 700;
+          display: block;
+          margin: 0 0 5px 0;
+        }
+      }
+    }
+
+  }
+
+  &__content {
+    border-top: 2px solid $blue;
+    padding-top: 65px;
+    padding-bottom: 65px;
+    @include media(sm) {
+      padding: 35px 0;
+    }
+  }
+
+  &__row{
+    &-bottom {
+      > * {
+        &:nth-child(1) {
+          @include media(sm) {
+            order: 2;
+          }
+        }
+        &:nth-child(2) {
+          @include media(sm) {
+            order: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .sidebar {
+    &__left {
+      @include media(md) {
+        display: none;
+      }
+    }
+    &__right {
+      @include media(md) {
+        width: 100%;
+      }
+    }
+  }
+}

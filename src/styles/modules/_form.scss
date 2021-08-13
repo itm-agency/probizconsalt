@@ -1,0 +1,112 @@
+.form {
+
+  label {
+    display: block;
+  }
+
+  &-group {
+    margin: 0 0 30px 0;
+
+    &-submit {
+      padding: 40px 0 0 0;
+      @include media(xs) {
+        padding: 0;
+      }
+    }
+  }
+
+  &-control {
+    width: 100%;
+    background: #fff;
+    border: 2px solid #dadada;
+    height: 70px;
+    padding: 0 25px;
+    color: $red;
+    transition: all 0.15s linear;
+    font-size: 15px;
+
+    &::placeholder {
+      opacity: 1;
+      color: #9c9c9c;
+    }
+
+    &:focus {
+      border-color: $red;
+    }
+  }
+
+  textarea {
+    height: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    resize: none;
+  }
+
+  &-checkbox {
+
+    [type="checkbox"] {
+      position: absolute;
+      left: -99999px;
+      width: 0;
+      opacity: 0;
+      height: 0;
+
+      + label {
+        position: relative;
+        font-size: 15px;
+        line-height: 1.4;
+        color: #9c9c9c;
+        padding: 0 0 0 54px;
+        cursor: pointer;
+
+        a {
+          text-decoration: underline;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+
+        &::before {
+          $size: 30px;
+
+          content: '';
+          position: absolute;
+          left: 0;
+          top: -6px;
+          width: $size;
+          height: $size;
+          border: 2px solid #dadada;
+        }
+
+        &::after {
+          $size: 10px;
+
+          content: '';
+          position: absolute;
+          width: $size;
+          height: $size;
+          background-color: $blue;
+          left: 10px;
+          top: 4px;
+          display: none;
+        }
+      }
+
+      &:checked {
+        + label {
+          &::after {
+            display: block;
+          }
+        }
+      }
+
+    }
+  }
+
+  [type="submit"] {
+    width: 280px;
+    height: 68px;
+  }
+
+}

@@ -1,0 +1,47 @@
+.services {
+  padding: 65px 0 0 0;
+  @include media(md) {
+    padding: 0;
+  }
+
+  &__header {
+    margin: 0 0 70px 0;
+    @include media(md) {
+      margin: 0 0 60px 0;
+    }
+
+    &-text {
+      color: #8e8e8e;
+      font-size: 18px;
+      line-height: 1.4;
+      @include media(md) {
+        font-size: 15px;
+      }
+    }
+  }
+  &__content {
+    $gutter: 80px;
+    $gutter-xl: 40px;
+
+    overflow: hidden;
+
+    .services_list {
+      margin: 0;
+      margin-left: -#{$gutter / 2};
+      margin-right: -#{$gutter / 2};
+
+      @include media(xl) {
+        margin-left: -#{$gutter-xl / 2};
+        margin-right: -#{$gutter-xl / 2};
+      }
+
+      > li {
+        padding: 0 #{$gutter / 2};
+        @include media(xl) {
+          padding: 0 #{$gutter-xl / 2};
+        }
+      }
+    }
+
+  }
+}
