@@ -14,28 +14,23 @@
   }
 
   &__item {
-    display: block;
     margin-bottom: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 
     &-title {
-      text-decoration: none;
-      outline: none !important;
-      background-image: linear-gradient(to top, transparent 0, #dfdfdf 0, #dfdfdf 1px, transparent 1px);
-      background-size: 100% 100%;
-      background-repeat: no-repeat;
-      background-position: left;
-      transition: -webkit-background-size 0.3s;
-      transition: background-size 0.3s;
+      text-decoration: underline;
     }
 
     &:hover {
       span {
-        background-size: 0% 100%;
+        text-decoration: none;
       }
     }
 
     &-image {
-      padding: 25px 0 0 0;
 
       img {
         object-fit: cover;

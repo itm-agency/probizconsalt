@@ -24,4 +24,12 @@
   &__content {
 
   }
+
+  &__slider {
+    .swiper {
+      &-slide {
+        height: auto;
+      }
+    }
+  }
 }
