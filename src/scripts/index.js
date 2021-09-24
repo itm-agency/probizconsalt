@@ -93,15 +93,18 @@ jQuery(document).ready(function () {
         sectionIds.each(function(){
 
             var container = $(this).attr('href');
-            var containerOffset = $(container).offset().top;
-            var containerHeight = $(container).outerHeight();
-            var containerBottom = containerOffset + containerHeight;
-            var scrollPosition = $(document).scrollTop();
 
-            if(scrollPosition < containerBottom - 130 && scrollPosition >= containerOffset - 130){
-                $(this).addClass('active');
-            } else{
-                $(this).removeClass('active');
+            if($(container).length) {
+                var containerOffset = $(container).offset().top;
+                var containerHeight = $(container).outerHeight();
+                var containerBottom = containerOffset + containerHeight;
+                var scrollPosition = $(document).scrollTop();
+
+                if(scrollPosition < containerBottom - 130 && scrollPosition >= containerOffset - 130){
+                    $(this).addClass('active');
+                } else{
+                    $(this).removeClass('active');
+                }
             }
 
         });
